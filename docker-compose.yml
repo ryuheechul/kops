@@ -3,7 +3,7 @@ services:
   kops:
     image: airhelp/kops:1.6.2
     volumes:
-      - ./.ssh:/root/.ssh:ro
+      - ~/.ssh:/root/.ssh:ro
       - ./.aws:/root/.aws:ro
       - ./.kube:/root/.kube:rw
       - .workdir:/workdir
