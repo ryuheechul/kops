@@ -17,6 +17,7 @@
 1. `$ make shell` will make you enter the container you can `kops`
 2. `$ kops get cluster` to check whether things working well or not
 3. `$ make aws` for aws cli
+4. `$ make kube-proxy` for `kubectl proxy`
 
 ## Clean up
 - `$ make down` to clean your `run` containers
