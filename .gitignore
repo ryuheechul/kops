@@ -1,0 +1,6 @@
+.env
+.kube
+.ssh
+.aws
+.workdir
+
