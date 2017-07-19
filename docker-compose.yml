@@ -10,3 +10,10 @@ services:
     working_dir: /workdir
     env_file:
       - .env
+  aws:
+    image: cgswong/aws:aws
+    volumes:
+      - ./.aws:/root/.aws
+      - .workdir:/workdir
+    working_dir: /workdir
+
