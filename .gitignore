@@ -3,4 +3,5 @@
 .ssh
 .aws
 .workdir
+.helm
 

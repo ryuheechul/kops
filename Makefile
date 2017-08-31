@@ -2,6 +2,8 @@
 
 shell:
 	docker-compose run --entrypoint /bin/ash kops
+helm:
+	docker-compose run --entrypoint /bin/ash helm
 aws:
 	docker-compose run --entrypoint /bin/ash aws -c "ntpd && /bin/ash"
 kube-proxy:
