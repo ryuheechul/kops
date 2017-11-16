@@ -2,6 +2,8 @@
 
 shell:
 	docker-compose run --entrypoint /bin/ash kops
+kube-shell:
+	docker-compose run --entrypoint /usr/bin/kube-shell kops
 helm:
 	docker-compose run --entrypoint /bin/ash helm
 aws:
