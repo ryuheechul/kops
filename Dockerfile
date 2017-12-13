@@ -1,4 +1,4 @@
-FROM airhelp/kops:1.6.2
+FROM airhelp/kops:1.7.0
 
 MAINTAINER ryuhcii@gmail.com
 
