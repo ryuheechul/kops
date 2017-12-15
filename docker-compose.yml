@@ -1,9 +1,7 @@
 version: '2'
 services:
   kops:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ryuheechul/k8s-pack:1.8.5
     volumes:
       - ~/.ssh:/root/.ssh:ro
       - .aws:/root/.aws:ro
@@ -26,7 +24,7 @@ services:
       - .workdir:/workdir
     working_dir: /workdir
   kubectl_proxy:
-    image: airhelp/kops:1.6.2
+    image: ryuheechul/k8s-pack:1.8.5
     volumes:
       - .kube:/root/.kube:rw
     entrypoint: /bin/ash

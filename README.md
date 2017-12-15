@@ -2,7 +2,7 @@
 
 ## Prepare
 
-- depends on this image https://hub.docker.com/r/airhelp/kops/ used in [./docker-compose.yml](./docker-compose.yml)
+- depends on this image https://hub.docker.com/r/ryuheechul/k8s-pack/ used in [./docker-compose.yml](./docker-compose.yml)
 - check [./docker-compose.yml](./docker-compose.yml) to prepare necessary files as you need
 - provide .env containing values like that
 
