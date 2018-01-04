@@ -1,13 +1,13 @@
 .PHONY: shell down
 
 shell:
-	docker-compose run --entrypoint /bin/ash kops
+	docker-compose run kops
 kube-shell:
 	docker-compose run --entrypoint /usr/bin/kube-shell kops
 helm:
-	docker-compose run --entrypoint /bin/ash helm
+	docker-compose run helm
 aws:
-	docker-compose run --entrypoint /bin/ash aws -c "ntpd && /bin/ash"
+	docker-compose run aws -c "ntpd && /bin/ash"
 kube-proxy:
 	docker-compose run --service-ports kubectl_proxy
 down:

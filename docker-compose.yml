@@ -1,7 +1,7 @@
 version: '2'
 services:
   kops:
-    image: ryuheechul/k8s-pack:1.8.5-kubeless-0.3.2
+    image: ryuheechul/k8s-pack:1.8.5-serverless
     volumes:
       - ~/.ssh:/root/.ssh:ro
       - .aws:/root/.aws:ro
@@ -17,17 +17,18 @@ services:
       - .workdir:/workdir
       - .helm:/root/.helm:rw
     working_dir: /workdir
+    entrypoint: /bin/ash
   aws:
     image: cgswong/aws:aws
     volumes:
       - .aws:/root/.aws
       - .workdir:/workdir
     working_dir: /workdir
+    entrypoint: /bin/ash
   kubectl_proxy:
-    image: ryuheechul/k8s-pack:1.8.5-kubeless-0.3.2
+    image: ryuheechul/k8s-pack:1.8.5-serverless
     volumes:
       - .kube:/root/.kube:rw
-    entrypoint: /bin/ash
     command: -c "kubectl proxy --address=\"0.0.0.0\" --port=9090 --accept-hosts '.*' --reject-methods=NONE"
     ports:
       - "9090:9090"
