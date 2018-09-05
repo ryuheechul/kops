@@ -6,3 +6,4 @@
 .helm
 
 .guard
+.DS_Store
