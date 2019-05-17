@@ -1,7 +1,7 @@
 .PHONY: shell down
 
 shell:
-	docker-compose run kops
+	mkdir -p ./.bash && touch ./.bash/.bash_history && docker-compose run kops
 kube-shell:
 	docker-compose run --entrypoint /usr/bin/kube-shell kops
 helm:

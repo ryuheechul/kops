@@ -7,7 +7,9 @@ services:
       - .aws:/root/.aws:ro
       - .kube:/root/.kube:rw
       - .workdir:/workdir
+      - .bash/.bash_history:/root/.bash_history
     working_dir: /workdir
+    entrypoint: bash
     env_file:
       - .env
   helm:

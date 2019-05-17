@@ -4,6 +4,6 @@
 .aws
 .workdir
 .helm
-
+.bash
 .guard
 .DS_Store
