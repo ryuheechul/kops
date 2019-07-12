@@ -1,8 +1,12 @@
 # Run `kops` in a Docker container
 
+## it is
+
+- let you manage your multiple k8s clusters seperately via different directory (each using this repo) with ready installed tools powered by Docker and docker-compose
+- the core docker image building happens [here](https://hub.docker.com/r/ryuheechul/k8s-pack/) and imported via [./docker-compose.yml](./docker-compose.yml)
+
 ## Prepare
 
-- depends on this image https://hub.docker.com/r/ryuheechul/k8s-pack/ used in [./docker-compose.yml](./docker-compose.yml)
 - check [./docker-compose.yml](./docker-compose.yml) to prepare necessary files as you need
 - provide .env containing values like that
 
@@ -15,11 +19,12 @@
 
 ## Run
 
-1. `$ make shell` will make you enter the container you can `kops`
-2. `$ kops get cluster` to check whether things working well or not
-3. `$ make aws` for aws cli
-4. `$ make kube-proxy` for `kubectl proxy`
+1. `$ make shell` will make you enter the container you can use `kops`
+1. `$ make kube-shell` if you want to use [kube-shell](https://github.com/cloudnativelabs/kube-shell)
+2. `$ make validate` to validate kops and the cluster
+3. `$ make aws` for AWS CLI
+4. `$ make kube-proxy` for `kubectl proxy` your cluster
 4. `$ make helm` to use `helm`
 
 ## Clean up
-- `$ make down` to clean your `run` containers
+- `$ make down` to clean your running containers
