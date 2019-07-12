@@ -1,7 +1,7 @@
 version: '2'
 services:
   kops:
-    image: ryuheechul/k8s-pack:1.13.1-fzf
+    image: ryuheechul/k8s-pack:1.13.1-vi-kb
     volumes:
       - ~/.ssh:/root/.ssh:ro
       - .aws:/root/.aws:ro
@@ -28,7 +28,7 @@ services:
     working_dir: /workdir
     entrypoint: /bin/ash
   kubectl_proxy:
-    image: ryuheechul/k8s-pack:1.13.1-fzf
+    image: ryuheechul/k8s-pack:1.13.1-vi-kb
     entrypoint: /bin/ash
     volumes:
       - .kube:/root/.kube:rw
