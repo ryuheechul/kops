@@ -1,7 +1,7 @@
 version: '2'
 services:
   kops:
-    image: ryuheechul/k8s-pack:1.13.1-vi-kb-top
+    image: ryuheechul/k8s-pack:1.15.1
     volumes:
       - ~/.ssh:/root/.ssh:ro
       - .aws:/root/.aws:ro
@@ -12,6 +12,8 @@ services:
     entrypoint: bash
     env_file:
       - .env
+    environment:
+      - "PS1=[kops bash] $$ "
   helm:
     image: lachlanevenson/k8s-helm:v2.12.1
     volumes:
@@ -20,6 +22,8 @@ services:
       - .helm:/root/.helm:rw
     working_dir: /workdir
     entrypoint: /bin/ash
+    environment:
+      - "PS1=[helm ash] $$ "
   aws:
     image: cgswong/aws:aws
     volumes:
@@ -27,8 +31,10 @@ services:
       - .workdir:/workdir
     working_dir: /workdir
     entrypoint: /bin/ash
+    environment:
+      - "PS1=[aws ash] $$ "
   kubectl_proxy:
-    image: ryuheechul/k8s-pack:1.13.1-vi-kb-top
+    image: ryuheechul/k8s-pack:1.15.1
     entrypoint: /bin/ash
     volumes:
       - .kube:/root/.kube:rw
